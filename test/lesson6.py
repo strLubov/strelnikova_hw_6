@@ -77,6 +77,7 @@ def info_about_func(func: any, *args) -> str:
     func_name = func.__name__
     name = func_name.replace("_", " ").title()
     full_info = f"{name} [{', '.join(args)}]"
+    print (full_info)
     return full_info
 
 
