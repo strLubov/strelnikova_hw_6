@@ -36,7 +36,7 @@ def test_find_suitable_user():
         {"name": "Olga", "age": 45},
         {"name": "Maria", "age": 18},
     ]
-    #TODO найдите пользователя с именем "Olga"
+    # TODO найдите пользователя с именем "Olga"
     suiable_user = None
 
     for user in users:
@@ -45,11 +45,8 @@ def test_find_suitable_user():
     assert suiable_user == {"name": "Olga", "age": 45}
 
     # TODO найдите всех пользователей младше 20 лет
-    suiable_users = []
+    suiable_users = [user for user in users if user.get("age") < 20]
 
-    for user in users:
-        if user.get("age") < 20:
-            suiable_users.append(user)
     assert suiable_users == [
         {"name": "Stanislav", "age": 15},
         {"name": "Maria", "age": 18},
@@ -77,7 +74,7 @@ def info_about_func(func: any, *args) -> str:
     func_name = func.__name__
     name = func_name.replace("_", " ").title()
     full_info = f"{name} [{', '.join(args)}]"
-    print (full_info)
+    print(full_info)
     return full_info
 
 
